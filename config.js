@@ -2,14 +2,17 @@
  * Thresholds are the pass/fail criteria for test metrics
  */
 export const THRESHOLDS_SETTINGS = {
+  // http_req_failed: 'rate<0.1', // 90% of checks must pass
   http_req_failed: [{
     threshold: 'rate<0.1',
     abortOnFail: true
   }],
+  // http_req_duration: ['avg<500'], // average of requests must complete below 500ms
   http_req_duration: [{
-    threshold: 'avg<8000',
+    threshold: 'avg<500',
     abortOnFail: true
   }],
+  // check_failure_rate: ['rate<0.1'], // 90% of checks must pass
   checks: [{
     threshold: 'rate>=0.1',
     abortOnFail: true
