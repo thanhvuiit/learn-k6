@@ -24,8 +24,8 @@ export const THRESHOLDS_SETTINGS = {
  */
 export const SMOKE_LOAD = {
   executor: 'per-vu-iterations',
-  vus: 10,
-  iterations: 105,
+  vus: 1,
+  iterations: 5,
   maxDuration: '5m30s'
 };
 

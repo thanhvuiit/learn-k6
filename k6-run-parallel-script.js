@@ -5,7 +5,7 @@
  */
 import { sleep, group, check } from 'k6';
 import http from 'k6/http';
-import { THRESHOLDS_SETTINGS, SMOKE_LOAD, AVERAGE_LOAD, STRESS_LOAD } from './config.js';
+import { THRESHOLDS_SETTINGS, SMOKE_LOAD, AVERAGE_LOAD, LIMIT_LOAD, STRESS_LOAD } from './config.js';
 
 // The k6 options object that defines thresholds, scenarios, user agent, and tags for the load test.
 export const options = {
@@ -15,7 +15,7 @@ export const options = {
     scenario_br: Object.assign({}, SMOKE_LOAD, { exec: 'scenario_brTest' }, { options: { browser: { type: 'chromium' },} }),
   },
   noConnectionReuse: true,
-  discardResponseBodies: true,
+  discardResponseBodies: false,
   userAgent: 'K6UserAgentString/1.0',
   tags: { testid: 'K6UserAgentString/1.0', },
 };
