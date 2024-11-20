@@ -42,7 +42,7 @@ export function setup() {
 // Main function for the test script.
 export default () => {
   console.log('Main');
-  init_func(randomItem(data));
+  // init_func(randomItem(data));
   // html();
   // check_func();
 }
